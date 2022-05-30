@@ -48,7 +48,7 @@ class Handler:
   def on_startVideoConvertionButton_clicked(self, button):
     global setOutputDirectory
     global outputDirectory
-    if(setVideoInputFile == True and setVideoOutputDirectory == True):
+    if(setVideoInputFile is True and setVideoOutputDirectory is True):
       os.system("ffmpeg -i '" + videoInputFile + "' '" + videoOutputDirectory + "/image-%01d.png' -hide_banner")
       videoConvertionDoneLabel.set_text("Done!")
       if(isinstance(videoOutputDirectory, str)):
@@ -65,7 +65,7 @@ class Handler:
     global name
     global description
     global scaleImages
-    if(setOutputDirectory == True):
+    if(setOutputDirectory is True):
       name = nameEntry.get_text()
       description = descriptionEntry.get_text()
       loopAnimation = loopAnimationCheckButton.get_active()
@@ -86,7 +86,7 @@ class Handler:
       scriptFile.write("Window.SetBackgroundBottomColor (0, 0, 0);\n")
       scriptFile.write("for(i = 1; i <= " + str(amountOfPngFiles) + "; i++)\n")
       scriptFile.write("{\n")
-      if(scaleImages == False):
+      if(scaleImages is False):
         scriptFile.write("  image[i].image = Image(\"image-\" + i + \".png\");\n")
       else:
         scriptFile.write("  image[i].image = Image(\"image-\" + i + \".png\").Scale(Window.GetWidth(), Window.GetHeight());\n")
@@ -102,7 +102,7 @@ class Handler:
       scriptFile.write("{\n")
       scriptFile.write("  if(index >= " + str(amountOfPngFiles) + " + 1)\n")
       scriptFile.write("  {\n")
-      if(loopAnimation == False):
+      if(loopAnimation is False):
         scriptFile.write("    image[" + str(amountOfPngFiles) + "].sprite.SetOpacity(1);\n")
       else:
         scriptFile.write("    index = 1;\n")
