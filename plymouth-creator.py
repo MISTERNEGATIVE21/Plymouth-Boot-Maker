@@ -1,15 +1,10 @@
 import os
 import glob
-import tkinter as tk
-from tkinter import filedialog
 from tkinter import *
 from tkinter.filedialog import askdirectory
 from tkinter.filedialog import askopenfilename
 import tkinter.messagebox as tkMessageBox
 import tkinter.simpledialog as tkSimpleDialog
-from tkinter.simpledialog import Dialog
-
-from subprocess import call
 import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
