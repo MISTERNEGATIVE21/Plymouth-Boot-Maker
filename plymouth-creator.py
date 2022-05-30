@@ -31,21 +31,24 @@ root = Tk()
 root.withdraw()
 
 class Handler:
-  def on_selectVideoButton_clicked(self, button):
+  @staticmethod
+  def on_selectVideoButton_clicked(button):
     global videoInputFile
     global setVideoInputFile
     videoInputFile = askopenfilename(parent=root,initialdir="/home",title='Select your .mp4 video',filetypes = (("mp4 files","*.mp4"),("all files","*.*")))
     if(isinstance(videoInputFile, str)):
       setVideoInputFile = True
       selectVideoDoneLabel.set_text("Done!")
-  def on_selectVideoOutputButton_clicked(self, button):
+  @staticmethod
+  def on_selectVideoOutputButton_clicked(button):
     global videoOutputDirectory
     global setVideoOutputDirectory
     videoOutputDirectory = askdirectory(parent=root,initialdir="/home",title='Select an empty output directory')
     if(isinstance(videoOutputDirectory, str)):
       setVideoOutputDirectory = True
       selectVideoOutputDoneLabel.set_text("Done!")
-  def on_startVideoConvertionButton_clicked(self, button):
+  @staticmethod
+  def on_startVideoConvertionButton_clicked(button):
     global setOutputDirectory
     global outputDirectory
     if(setVideoInputFile == True and setVideoOutputDirectory == True):
@@ -55,13 +58,15 @@ class Handler:
         setOutputDirectory = True
         outputDirectory = videoOutputDirectory
         selectDirectoryDoneLabel.set_text("Done!")
-  def on_selectDirectoryButton_clicked(self, button):
+  @staticmethod
+  def on_selectDirectoryButton_clicked(button):
     global outputDirectory
     outputDirectory = askdirectory(parent=root,initialdir="/home",title='Select directory with .png files')
     if(isinstance(outputDirectory, str)):
         setOutputDirectory = True
         selectDirectoryDoneLabel.set_text("Done!")
-  def on_generateButton_clicked(self, button):
+  @staticmethod
+  def on_generateButton_clicked(button):
     global name
     global description
     global scaleImages
