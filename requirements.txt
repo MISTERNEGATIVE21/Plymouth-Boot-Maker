@@ -1,0 +1,6 @@
+pgi
+PyGObject
+pycairo
+setuptools
+tk
+ffmpeg
