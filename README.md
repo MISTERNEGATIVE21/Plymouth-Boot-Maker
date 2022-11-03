@@ -7,7 +7,7 @@ A tool using GTK3 and Python to create your own plymouth boot animations.A tool 
 With the help of this tool, everybody can create their own plymouth boot animations with just a few clicks.
 You can use an existing .mp4 video or even single .png files to create your own customized boot animation for linux.
 When you're done, you can apply it on your own computer, or you can share it with the community.
-#Updated 
+# Updated 
 - use pip install -r requirements.txt
 and python3 plymouth-creator.py
 ## Dependencies:
